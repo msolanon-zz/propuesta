@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Gestion</title>
+    <link rel="stylesheet" href="css/datatables.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="tickets.html">Tickets</a>
+                    <a class="mdl-navigation__link" href="about.html">Acerca de</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="tickets.html">Tickets</a>
+                <a class="mdl-navigation__link" href="about.html">Acerca de</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="" style="padding-left: 5%; padding-right: 5%; min-height: 500px;"">
+                        <div style="float:left; padding-top: 10px; padding-bottom: 5px;">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="agregarTicket">
+                              Agregar
+                            </button>
+                        </div>
+                        <div style="width:100%; overflow-x: auto; min-height: 400px">
+                            <table id="ticketsTable" class="mdl-data-table" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Acciones</th>
+                                        <th>Usuario Solicitante</th>
+                                        <th>Tipo</th>
+                                        <th>Fecha Envío</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar" class="icon-color icon-color-modificar btn-lnk"></a>
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Juanita Nixon</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr>
+                                    <tr>
+                                         <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar Ticket" class="icon-color icon-color-modificar btn-lnk"></a>
+
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Roger Winters</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar Ticket" class="icon-color icon-color-modificar btn-lnk"></a>
+
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Fabricio Solis</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr> 
+                                    <tr>
+                                         <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar Ticket" class="icon-color icon-color-modificar btn-lnk"></a>
+
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Alonso Elizondo</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr> 
+                                    <tr>
+
+                                         <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar Ticket" class="icon-color icon-color-modificar btn-lnk"></a>
+
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Garrett Winters</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr> 
+                                    <tr>
+                                        <td>
+                                            <div style="width: 120px">
+                                                <a id="modificarTicket" title="Modificar Ticket" class="icon-color icon-color-modificar btn-lnk"></a>
+
+                                                <a id="eliminarTicket" title="Eliminar" class="icon-color icon-color-borrar btn-lnk"></a>
+                                            </div> 
+                                        </td>
+                                        <td>Juan D Dios</td>
+                                        <td>Soporte TI</td>
+                                        <td>03/07/17</td>
+                                        <td>Activo</td>
+                                    </tr> 
+                                </tbody>
+                            </table>      
+                        </div>           
+                </div>
+                <dialog class="mdl-dialog" id="modal-example">
+                    <div class="mdl-dialog__content">
+                           <form action="#">
+                                       <div class="mdl-textfield mdl-js-textfield">
+                                            <textarea class="mdl-textfield__input" type="text" rows="5" id="descripcionTicket"></textarea>     
+                                            <label class="mdl-textfield__label" for="descripcionTicket">Descripci&oacute;n</label>
+                                       </div>
+                            </form>
+                        <div class="mdl-card__actions mdl-card--border">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="agregarBtn">
+                                  Agregar Ticket
+                                </button>                        
+                        </div>
+                    </div>
+                </dialog>
+            </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Gestion</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy & Terms</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="js/datatables/dataTables.autoFill.min.js"></script>
+    <script src="js/datatables/dataTables.buttons.min.js"></script>
+    <script src="js/datatables/dataTables.fixedColumns.min.js"></script>
+    <script src="js/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="js/datatables/dataTables.scroller.min.js"></script>
+    <script src="js/datatables/dataTables.responsive.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+             $('#ticketsTable').DataTable( {
+                    "autoWidth"     : true,
+                    "scrollCollapse": true,
+                    "paging"        : true,
+                    "searching"        : true,
+                    "pageLength"    : 5,
+                    "lengthMenu"    : [[5, 10, 15, 20, -1], [5, 10, 15, 20, "Todos"]],
+                    "processing"    : true,
+                    "destroy"       : true,
+                    "select"        : false,
+                    "order"            : [],
+                    "dom"            : '<"top"f>rt<"bottom"lip><"clear">',
+                    "columnDefs"    : [{ "orderable": false, "targets": [ 0 ] },
+                                       { "className": 'mdl-data-table__cell--non-numeric', "targets": [ ] }],
+                    "language"        : { "searchPlaceholder": "Buscar", 
+                                          "search"     : "_INPUT_",
+                                          "lengthMenu" : "Mostrar _MENU_ registros",
+                                          "zeroRecords": "No se encontraron resultados",
+                                          "emptyTable" : "Ningún dato disponible en esta tabla",
+                                          "info"       : "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                                          "infoEmpty"  : "Mostrando del 0 al 0 de 0 registros",
+                                          "infoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                                          "paginate": {
+                                              "first": "Primero",
+                                              "last" : "Último",
+                                              "next" : ">>",
+                                              "previous": "<<"
+                                          },
+                                        },
+              } );
+            
+         } );
+        (function() {
+                'use strict';
+                var dialog = document.querySelector('#modal-example');
+                var closeButton = dialog.querySelector('button');
+                var showButton = document.querySelector('#agregarTicket');
+                if (! dialog.showModal) {
+                    dialogPolyfill.registerDialog(dialog);
+                }
+                var closeClickHandler = function(event) {
+                    dialog.close();
+                };
+                var showClickHandler = function(event) {
+                    dialog.showModal();
+                };
+                showButton.addEventListener('click', showClickHandler);
+                closeButton.addEventListener('click', closeClickHandler);
+                }());
+    </script>
+
+</body>
+
+</html>
