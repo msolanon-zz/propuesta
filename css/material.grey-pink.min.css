@@ -4730,6 +4730,7 @@ left
 	box-sizing: border-box;
 	border-right: 1px solid #e0e0e0;
 	background: #fafafa;
+    background-color:#3C99AB;
 	-webkit-transform: translateX(-250px);
 	transform: translateX(-250px);
 	-webkit-transform-style: preserve-3d;
@@ -4792,7 +4793,7 @@ left
 	flex-shrink: 0;
 	padding: 16px 40px;
 	margin: 0;
-	color: #757575
+	color: white;
 }
 
 @media screen and (max-width:1024px) {
