@@ -1,3 +1,5 @@
+var reservacion;
+
 $(document).ready(function() {
 
 	$('#calendar').fullCalendar({
@@ -50,12 +52,13 @@ $(document).ready(function() {
 				}
 			],
 			eventClick : function(event) {
-				modificarReserva(event);
+				abrirInformacion(event);
 			}
 		});
 	});
 
-function modificarReserva(event){
+function abrirInformacion(event){
+	reservacion = event;
 	var fechaCalendar = new Date(event.start);
 	fechaCalendar = new Date(fechaCalendar.getFullYear(), fechaCalendar.getMonth(), fechaCalendar.getDate() + 1, 0, 0, 0);
 	var fechaCalMod = fechaCalendar.getFullYear() + '/'
@@ -64,4 +67,29 @@ function modificarReserva(event){
 	$('#fechaInfo').html(fechaCalMod);
 	$('#descripcionInfo').html('La sala ha sido reservada por Edlin Abarca todo el día. El tipo de reunión es externa.');
 	$('#modalInformacion').modal('show');
+}
+
+function modificarReserva(){
+	$('#modalInformacion').modal('hide');
+	$('#modalInformacion').hide();
+	var fechaCalendar = new Date(reservacion.start);
+	fechaCalendar = new Date(fechaCalendar.getFullYear(), fechaCalendar.getMonth(), fechaCalendar.getDate() + 1, 0, 0, 0);
+	var fechaCalMod = fechaCalendar.getFullYear() + '/'
+		+ ('0' + (fechaCalendar.getMonth() + 1)).slice(-2) + '/'
+		+ ('0' + fechaCalendar.getDate()).slice(-2);
+	$('#fecha').val(fechaCalMod);
+	$('#adicional').val(reservacion.title);
+	$('#modalReservar').modal('show');
+}
+
+function reservar(){
+	$('#modalReservar').hide();
+}
+
+function cerrarModal(){
+	$('#modalReservar').hide();
+}
+
+function cerrarModalInfo(){
+	$('#modalReservar').hide();
 }

@@ -56,18 +56,14 @@
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                     <a class="mdl-navigation__link is-active" href="index.html">Reserva de Salas</a>
-                    <!--<a class="mdl-navigation__link" href="blog.html">Blog</a>-->
-                    <a class="mdl-navigation__link" href="about.html">About</a>
-                    <!--<a class="mdl-navigation__link" href="contact.html">Contact</a>-->
+                    <a class="mdl-navigation__link" href="about.html">Historial de reservas</a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
                 <a class="mdl-navigation__link is-active" href="index.html">Reserva de Salas</a>
-                <!--<a class="mdl-navigation__link" href="blog.html">Blog</a>-->
-                <a class="mdl-navigation__link" href="about.html">About</a>
-                <!--<a class="mdl-navigation__link" href="contact.html">Contact</a>-->
+                <a class="mdl-navigation__link" href="about.html">Historial de reservas</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -103,6 +99,10 @@
 	                        <label for="fecha"> Fecha</label>
 	                        <input type="date" id="fecha" name="fecha" class="form-control" readonly="true">
 	                    </div>
+	                    <div class="form-group">
+	                        <label for="fecha">Usuario Reserva</label>
+	                        <input type="text" id="usuario" name="usuario" class="form-control" value="Edlin Abarca González" readonly="true">
+	                    </div>
                			<div class="form-group">
 	                        <label for="sala"><i class="reqField">*</i> Sala</label>
 	                        <select id="sala" name="sala" class="form-control small">
@@ -131,13 +131,22 @@
 							</select>
 	                    </div>
 	                    <div class="form-group">
+	                        <label for="fecha"> Cantidad de Personas</label>
+	                        <input type="number" id="cantidad" name="cantidad" class="form-control" min="2" value="2">
+	                    </div>
+	                    <div class="form-group">
+	                    	<div class="checkbox">
+	                    		<label><input type="checkbox" value="">Refrigerio</label>
+	                    	</div>
+	                    </div>
+	                    <div class="form-group">
 	                        <label for="sala"><i class="reqField">*</i> Adicionales</label>
-							<textarea class="form-control" rows="8" id="adicional" name="adicional" placeholder="Servicios adicionales en la sala"></textarea>
+							<textarea class="form-control" rows="5" id="adicional" name="adicional" placeholder="Servicios adicionales en la sala"></textarea>
 						</div>
                		</div>
                		<div class="modal-footer">
                			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-               			<button type="button" class="btn btn-primary">Reservar</button>
+               			<button type="button" class="btn btn-primary" onclick="reservar();">Reservar</button>
                		</div>
                 </div>
             </div>
@@ -161,8 +170,8 @@
 						</div>
 					</div>
                		<div class="modal-footer">
-               			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-               			<button type="button" class="btn btn-primary">Reservar</button>
+               			<button id="btnCancelar" type="button" class="btn btn-danger" >Cancelar Reserva</button>
+               			<button id="btnModificar" type="button" class="btn btn-success" onclick="modificarReserva();">Modificar</button>
                		</div>
                 </div>
             </div>

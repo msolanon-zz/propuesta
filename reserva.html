@@ -1,0 +1,225 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description"
+	content="A portfolio template that uses Material Design Lite.">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Reserva de Salas</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="css/material.grey-pink.min.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href='css/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='css/reserva.css' rel='stylesheet' />
+<link href='css/fullcalendar/fullcalendar.print.min.css'
+	rel='stylesheet' media='print' />
+<script src='js/moment.min.js'></script>
+<script src='js/jquery.min.js'></script>
+<script src='js/fullcalendar/fullcalendar.min.js'></script>
+<script src='js/fullcalendar/es.js'></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header
+			class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+			<div class="mdl-layout__header-row portfolio-logo-row">
+				<span class="mdl-layout__title">
+					<div class="portfolio-logo"></div> <span class="mdl-layout__title">Reserva
+						de Salas</span>
+				</span>
+			</div>
+			<div
+				class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+				<nav
+					class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+					<a class="mdl-navigation__link is-active" href="reserva.html">Reserva
+						de Salas</a> <a class="mdl-navigation__link" href="historial.html">Historial
+						de reservas</a>
+				</nav>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+			<nav
+				class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+				<a class="mdl-navigation__link is-active" href="reserva.html">Reserva
+					de Salas</a> <a class="mdl-navigation__link" href="historial.html">Historial
+					de reservas</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+		<div class="mdl-grid max-width">
+			<div
+				class="mdl-grid mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+				<div class="mdl-cell mdl-cell--12-col">
+					<div id='calendar'></div>
+				</div>
+			</div>
+		</div>
+		<footer class="mdl-mini-footer">
+			<div class="mdl-mini-footer__left-section">
+				<div class="mdl-logo">Reserva de Salas</div>
+			</div>
+			<div class="mdl-mini-footer__right-section">
+				<ul class="mdl-mini-footer__link-list">
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Privacy & Terms</a></li>
+				</ul>
+			</div>
+		</footer> </main>
+		<!-- Modal Reservar sala -->
+		<div class="modal fade" id="modalReservar" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Reservando Sala</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="fecha"> Fecha</label> <input type="date" id="fecha"
+								name="fecha" class="form-control" readonly="true">
+						</div>
+						<div class="form-group">
+							<label for="fecha">Usuario Reserva</label> <input type="text"
+								id="usuario" name="usuario" class="form-control"
+								value="Edlin Abarca González" readonly="true">
+						</div>
+						<div class="form-group">
+							<label for="sala"><i class="reqField">*</i> Sala</label> <select
+								id="sala" name="sala" class="form-control small">
+								<option value="0">--Seleccionar--</option>
+								<option value="1">Sala 1</option>
+								<option value="2">Sala 2</option>
+								<option value="3">Sala 3</option>
+								<option value="4">Sala 4</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="sala"><i class="reqField">*</i> Reservar</label> <select
+								id="reserva" name="reserva" class="form-control small">
+								<option value="0">--Seleccionar--</option>
+								<option value="1">Mañana</option>
+								<option value="2">Tarde</option>
+								<option value="3">Todo el día</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="sala"><i class="reqField">*</i> Tipo reunión</label>
+							<select id="tipo" name="tipo" class="form-control small">
+								<option value="0">--Seleccionar--</option>
+								<option value="1">Interna</option>
+								<option value="2">Externa</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="fecha"> Cantidad de Personas</label> <input
+								type="number" id="cantidad" name="cantidad" class="form-control"
+								min="2" value="2">
+						</div>
+						<div class="form-group">
+							<span class="mdl-list__item-secondary-action"> <label
+								class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+								for="list-switch-1"> <input type="checkbox"
+									id="list-switch-1" class="mdl-switch__input" checked />
+							</label>
+							</span>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Refrigerio</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sala"><i class="reqField">*</i> Adicionales</label>
+							<textarea class="form-control" rows="5" id="adicional"
+								name="adicional" placeholder="Servicios adicionales en la sala"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary"
+							onclick="reservar();">Reservar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modalInformacion" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="tituloInformacion">Información de
+							la Reserva</h4>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">Fecha</label>
+							<div id="fechaInfo" name="fechaInfo"></div>
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="control-label">Descripción</label>
+							<div id="descripcionInfo" name="descripcionInfo"></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="btnCancelar" type="button" class="btn btn-danger">Cancelar
+							Reserva</button>
+						<button id="btnModificar" type="button" class="btn btn-success"
+							onclick="modificarReserva();">Modificar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/material.min.js"></script>
+	<script src="js/reserva.js"></script>
+</body>
+
+</html>
