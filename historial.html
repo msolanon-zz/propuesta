@@ -32,32 +32,27 @@
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link href='css/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-<link href='css/reserva.css' rel='stylesheet' />
-<link href='css/fullcalendar/fullcalendar.print.min.css'
-	rel='stylesheet' media='print' />
 <script src='js/moment.min.js'></script>
 <script src='js/jquery.min.js'></script>
-<script src='js/fullcalendar/fullcalendar.min.js'></script>
-<script src='js/fullcalendar/es.js'></script>
+
+<!-- Awesome Font -->
+<link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+<link href="css/font-awesome/fonts/FontAwesome.otf">
+<link href="css/font-awesome/fonts/fontawesome-webfont.eot">
+<link href="css/font-awesome/fonts/fontawesome-webfont.svg">
+<link href="css/font-awesome/fonts/fontawesome-webfont.ttf">
+<link href="css/font-awesome/fonts/fontawesome-webfont.woff">
+<link href="css/font-awesome/fonts/fontawesome-webfont.woff2">
+
+
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap/bootstrap-theme.css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-</head>
+<script src='js/bootstrap/bootstrap.js'></script>
 
 <body>
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -73,55 +68,141 @@
 				class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
 				<nav
 					class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-					<a class="mdl-navigation__link" href="reserva.html">Reserva de
-						Salas</a> <a class="mdl-navigation__link is-active"
-						href="historial.html">Historial de reservas</a>
+					<a class="mdl-navigation__link" href="reserva.html">Reserva de Salas</a>
+					<a class="mdl-navigation__link" href="reservaAdmin.html">Reserva de Salas Admin</a>
+					<a class="mdl-navigation__link is-active" href="historial.html">Historial de reservas</a>
 				</nav>
 			</div>
 		</header>
 		<div class="mdl-layout__drawer mdl-layout--small-screen-only">
 			<nav
 				class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-				<a class="mdl-navigation__link" href="reserva.html">Reserva de
-					Salas</a> <a class="mdl-navigation__link is-active"
-					href="historial.html">Historial de reservas</a>
+				<a class="mdl-navigation__link" href="reserva.html">Reserva de Salas</a>
+				<a class="mdl-navigation__link" href="reservaAdmin.html">Reserva de Salas Admin</a>
+				<a class="mdl-navigation__link is-active" href="historial.html">Historial de reservas</a>
 			</nav>
 		</div>
 		<main class="mdl-layout__content">
-		<div class="mdl-grid max-width">
-			<div
-				class="mdl-grid mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-				<div class="mdl-cell mdl-cell--12-col">
-					<table
-						class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
-						<thead>
-							<tr>
-								<th class="mdl-data-table__cell--non-numeric">Material</th>
-								<th>Quantity</th>
-								<th>Unit price</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">Acrylic
-									(Transparent)</td>
-								<td>250</td>
-								<td>$2.90</td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">Plywood
-									(Birch)</td>
-								<td>50</td>
-								<td>$1.25</td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">Laminate
-									(Gold on Blue)</td>
-								<td>10</td>
-								<td>$12.35</td>
-							</tr>
-						</tbody>
-					</table>
+			<div class="mdl-grid max-width">
+				<div
+					class="mdl-grid mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+					<div class="mdl-cell mdl-cell--12-col">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Acciones</th>
+									<th>Sala</th>
+									<th>Fecha Reserva</th>
+									<th>Tipo Reserva</th>
+									<th>Usuario solicitó</th>
+									<th>Horario</th>
+									<th>Estado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-edit"></i>
+										<i class="fa fa-info"></i>
+										<i class="fa fa-close"></i>
+									</td>
+									<td>Sala 3</td>
+									<td>2017/07/15</td>
+									<td>Interna</td>
+									<td>Usuario 1</td>
+									<td>Todo el día</td>
+									<td>Reservada</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-info"></i>
+									</td>
+									<td>Sala 1</td>
+									<td>2017/07/9</td>
+									<td>PROYECTO ICE</td>
+									<td>Usuario 1</td>
+									<td>Tarde</td>
+									<td>Cancelada</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-edit"></i>
+										<i class="fa fa-info"></i>
+										<i class="fa fa-close"></i>
+									</td>
+									<td>Sala 2</td>
+									<td>2017/07/5</td>
+									<td>PROYECTO ICE</td>
+									<td>Usuario 1</td>
+									<td>Mañana</td>
+									<td>Reservada</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-info"></i>
+									</td>
+									<td>Sala 2</td>
+									<td>2017/07/2</td>
+									<td>PROYECTO ICE</td>
+									<td>Usuario 1</td>
+									<td>Todo el día</td>
+									<td>Finalizada</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-commenting-o" onclick="agregarComentario();"></i>
+										<i class="fa fa-info"></i>
+									</td>
+									<td>Sala 3</td>
+									<td>2017/07/1</td>
+									<td>PROYECTO ICE</td>
+									<td>Usuario 1</td>
+									<td>Mañana</td>
+									<td>Finalizada</td>
+								</tr>
+								<tr>
+									<td scope="row">
+										<i class="fa fa-info"></i>
+									</td>
+									<td>Sala 4</td>
+									<td>2017/06/20</td>
+									<td>Interna</td>
+									<td>Usuario 1</td>
+									<td>Mañana</td>
+									<td>Finalizada</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="modal fade" id="modalComentario" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="tituloComentario">Comentar Reserva</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<p>Reserva de la sala 4 por el Usuario la fecha 2017/07/5, la reserva fue de tipo PROYECTO ICE, la cantidad de personas 5,
+							 el responsable fue Usuario.</p>
+						</div>
+						<div class="form-group">
+							<label for="fecha">Comentario de la Reservación</label>
+							<textarea id="comentario" name="comentario" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button id="btnComentar" type="button" class="btn btn-success"
+							onclick="guardarComentario();">Guardar Comentario</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -138,6 +219,7 @@
 		</footer> </main>
 	</div>
 	<script src="js/material.min.js"></script>
+	<script src="js/historial.js"></script>
 </body>
 
 </html>

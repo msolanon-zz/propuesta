@@ -64,8 +64,8 @@
 				class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
 				<nav
 					class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-					<a class="mdl-navigation__link is-active" href="reserva.html">Reserva de Salas</a>
-					<a class="mdl-navigation__link" href="reservaAdmin.html">Reserva de Salas Admin</a>
+					<a class="mdl-navigation__link" href="reserva.html">Reserva de Salas</a>
+					<a class="mdl-navigation__link is-active" href="reservaAdmin.html">Reserva de Salas Admin</a>
 					<a class="mdl-navigation__link" href="historial.html">Historial de reservas</a>
 				</nav>
 			</div>
@@ -73,8 +73,8 @@
 		<div class="mdl-layout__drawer mdl-layout--small-screen-only">
 			<nav
 				class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-				<a class="mdl-navigation__link is-active" href="reserva.html">Reserva de Salas</a>
-				<a class="mdl-navigation__link" href="reservaAdmin.html">Reserva de Salas Admin</a>
+				<a class="mdl-navigation__link" href="reserva.html">Reserva de Salas</a>
+				<a class="mdl-navigation__link is-active" href="reservaAdmin.html">Reserva de Salas Admin</a>
 				<a class="mdl-navigation__link" href="historial.html">Historial de reservas</a>
 			</nav>
 		</div>
@@ -126,12 +126,8 @@
 								name="fecha" class="form-control" readonly="true">
 						</div>
 						<div class="form-group">
-							<label for="fechaFin"> Fecha Fin</label> <input type="date" id="fechaFin"
-								name="fechaFin" class="form-control">
-						</div>
-						<div class="form-group">
-							<label for="fecha"> Usuario Solicita</label>
-							<select id="usuarioSolicita" name="usuarioSolicita" class="form-control small" disabled>
+							<label for="fecha"><i class="reqField">*</i>Usuario Solicita</label>
+							<select id="usuarioSolicita" name="usuarioSolicita" class="form-control small">
 								<option value="0">--Seleccionar--</option>
 								<option value="1" selected>Edlin Abarca</option>
 								<option value="2">Esteban Arias</option>
@@ -144,16 +140,17 @@
 							<label for="fecha"> Usuario Registra</label>
 							<select id="usuarioRegistra" name="usuarioRegistra" class="form-control small" disabled>
 								<option value="0">--Seleccionar--</option>
-								<option value="1" selected>Edlin Abarca</option>
+								<option value="1">Edlin Abarca</option>
 								<option value="2">Esteban Arias</option>
 								<option value="3">Guiselle Hernandez</option>
 								<option value="4">Jason Herrera</option>
 								<option value="5">Michael Solano</option>
+								<option value="5" selected>Vivian Monge</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="fecha"> Usuario Responsable</label>
-							<select id="usuarioResponsable" name="usuarioResponsable" class="form-control small" disabled>
+							<label for="fecha"><i class="reqField">*</i>Usuario Responsable</label>
+							<select id="usuarioResponsable" name="usuarioResponsable" class="form-control small">
 								<option value="0">--Seleccionar--</option>
 								<option value="1">Arnaldo Rodriguez</option>
 								<option value="2" selected>Edlin Abarca</option>
@@ -190,7 +187,7 @@
 						</div>
 						<div class="form-group">
 							<div class="checkbox">
-								<label><i class="reqField">*</i> <input type="checkbox" value="">Servicio de Refrigerio</label>
+								<label><i class="reqField">*</i><input type="checkbox" value="">Servicio de Refrigerio</label>
 							</div>
 						</div>
 					</div>
@@ -226,31 +223,10 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button id="btnCancelar" type="button" class="btn btn-danger" onclick="modalCancelar();">Cancelar Reserva</button>
+						<button id="btnCancelar" type="button" class="btn btn-danger">Cancelar
+							Reserva</button>
 						<button id="btnModificar" type="button" class="btn btn-success"
 							onclick="modificarReserva();">Modificar</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="modalCancelar" tabindex="-1"
-			role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="tituloCancelar">Cancelar Reserva</h4>
-					</div>
-					<div class="modal-body">
-						<h3>DESEA CANCELAR LA RESERVACIÓN DE LA SALA?</h3>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">NO</button>
-						<button id="btnCancelarReserva" type="button" class="btn btn-success"
-							onclick="cancelarReserva();">SI</button>
 					</div>
 				</div>
 			</div>
